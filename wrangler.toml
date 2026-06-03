@@ -1,0 +1,22 @@
+name = "vrmap-api"
+main = "worker/index.ts"
+compatibility_date = "2024-09-01"
+
+# ── D1 データベース ──────────────────────────────
+[[d1_databases]]
+binding = "DB"
+database_name = "vrmap-db"
+database_id = "your-database-id"  # wrangler d1 create vrmap-db で取得
+
+# ── R2 ストレージ ────────────────────────────────
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "vrmap-images"
+
+# ── 環境変数 ────────────────────────────────────
+[vars]
+R2_PUBLIC_URL = "https://your-r2-public-url.r2.dev"  # R2のパブリックURLに変更
+
+# ── シークレット（wrangler secret put ADMIN_SECRET で設定） ──
+# ADMIN_SECRET は wrangler secret put コマンドで別途設定
+# 例: echo "your-secret-key" | wrangler secret put ADMIN_SECRET
