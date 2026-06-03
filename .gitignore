@@ -35,6 +35,3 @@ npm-debug.log*
 
 # TypeScript
 *.tsbuildinfo
-
-# マップ画像（実際の画像は含めない）
-public/map.png
